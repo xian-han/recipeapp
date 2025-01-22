@@ -25,10 +25,10 @@ function App() {
   return (
     <div className="App">
     <ShopContextProvider>
-    <Router basename='/'>
+    <Router basename='/recipeapp'>
       <Navbar/>
       <Routes>
-        <Route path="/recipeapp" element={<Home/>}></Route>
+        <Route path="/" element={<Home/>}></Route>
         <Route path="/Cart" element={<Cart/>}></Route>
         <Route path="/Menu" element={<Menu/>}></Route>
       </Routes>
