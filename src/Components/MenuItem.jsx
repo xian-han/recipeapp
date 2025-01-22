@@ -54,7 +54,6 @@ function MenuItem({id,name,front_image,price}) {
           //   </div>
           //  </div>):
           // (
-          
           // )
            }  */}
         </button>        
