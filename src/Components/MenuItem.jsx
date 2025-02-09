@@ -1,4 +1,4 @@
-import React,{useContext,useState} from 'react'
+import React,{useContext,useState,useEffect} from 'react'
 import {ShoppingCart} from 'phosphor-react'
 import {ShopContext} from '../helpers/ShopContext'
 
@@ -6,9 +6,26 @@ function MenuItem({id,name,front_image,price}) {
   
   const [isTyping,setIsTyping] = useState(false);
   
-  const {tempItem,plusTempAccount,minusTempAccount,updateCartAccount} = useContext(ShopContext);
+  const {tempItem,loadingTime,plusTempAccount,minusTempAccount,updateCartAccount} = useContext(ShopContext);
 
   const tempItemAccount = tempItem[id];
+
+  const [clickFlag,setClickFlag] = useState(false);
+
+  var addToCartContent = <div className="cartMarkContainer">
+    <ShoppingCart className="cartMark" size={25}/>
+    <span>
+      add to cart
+    </span>
+  </div>;
+
+  var hidden_spinner = <div className="hidden_spinner">
+    <div className="spinner">
+      <div className="spinnerRed spinnerSector"></div>
+      <div className="spinnerBlue spinnerSector"></div>
+      <div className="spinnerGreen spinnerSector"></div>
+    </div>
+  </div>;
 
   const handleFocus = () =>{
     setIsTyping(true);
@@ -21,6 +38,13 @@ function MenuItem({id,name,front_image,price}) {
   const handleChange = () =>{
 
   }
+  useEffect(()=>{
+    if(clickFlag){
+      setTimeout(()=>{
+        setClickFlag((prev)=>!prev);
+      },loadingTime);
+    }
+  },[clickFlag]);
 
   return (
     <div className="menuItem">
@@ -41,22 +65,18 @@ function MenuItem({id,name,front_image,price}) {
           placeholder="Enter Account"
         />
         <button className="increacingBtn" type="button" onClick ={()=>plusTempAccount(id)}>&#43;</button>
-        <button className="addToCartBtn" type="button" onClick={()=>updateCartAccount(id,tempItemAccount)}>
-        <ShoppingCart className="cartMark" size={32} hidden={true}/>
-          add to cart
-          {/* {
-          //   addFlag?(
-          //   <div className="hidden_spinner">
-          //   <div className="spinner">
-          //     <div className="spinnerRed spinnerSector"></div>
-          //     <div className="spinnerBlue spinnerSector"></div>
-          //     <div className="spinnerGreen spinnerSector"></div>
-          //   </div>
-          //  </div>):
-          // (
-          // )
-           }  */}
-        </button>        
+        <div className="addBtnContainer">
+          <button className="addToCartBtn" type="button" 
+          onClick={()=>{
+              updateCartAccount(id,tempItemAccount)
+              setClickFlag((prev)=>!prev)
+            }}>
+          {
+            clickFlag?(hidden_spinner):(addToCartContent)
+          }
+          </button>        
+        </div>
+        
       </div>
     </div>
   )
