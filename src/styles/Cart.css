@@ -1,6 +1,8 @@
 .Cart{
     height:auto;
     width:100%;
+    min-width:350px;
+    min-height:850px;
     margin-bottom:100px;
 }
 .cartTitle{
@@ -29,6 +31,8 @@
     max-height:45px;
     max-width:300px;
     font-size: 15px;
+    border-radius:5px;
+    border:3px solid;
 }
 .cartIsEmpty button:hover{
     cursor:pointer;
