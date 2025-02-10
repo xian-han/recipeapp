@@ -14,8 +14,10 @@ function Menu() {
   };
   return (
     <div className="Menu">
-      <div className="title">
-        Dessert Menu
+      <div className="titleContainer">
+        <h1 className="titleText">
+          Dessert Menu
+        </h1>
       </div>
       <div className="MenuList">
         { 
