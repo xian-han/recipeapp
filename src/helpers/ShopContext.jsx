@@ -14,11 +14,12 @@ const getDefaultCart = () =>{
 export const ShopContextProvider = (props) =>{
     const [tempItem,setTempItem] = useState(getDefaultCart);
     const [cartItem,setCartItem] = useState(getDefaultCart);
-    
+    //統一管理loading時間
+    const loadingTime = 1000;
     const getCartTotalPrice = ()=>{
         var totalPrice = 0;
         MenuList.map((menuitem)=>{
-            const itemAccount = cartItem[menuitem.id]
+            const itemAccount = cartItem[menuitem.id];
             if(itemAccount>0)
                 totalPrice += itemAccount * menuitem.price;
         })
@@ -46,7 +47,9 @@ export const ShopContextProvider = (props) =>{
     const updateCartAccount=(cartId,tempItemAccount)=>{
         
         if(tempItemAccount>0){
-            setCartItem((prev)=>({...prev,[cartId]:prev[cartId]+tempItemAccount}));
+            setTimeout(()=>{
+                setCartItem((prev)=>({...prev,[cartId]:prev[cartId]+tempItemAccount}));
+            },loadingTime);
         }
         else{
             alert("Account must be larger than 0.");
@@ -60,6 +63,7 @@ export const ShopContextProvider = (props) =>{
     const contextValue = {
         tempItem,
         cartItem,
+        loadingTime,
         plusCartAccount,
         minusCartAccount,
         plusTempAccount,
