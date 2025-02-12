@@ -32,7 +32,7 @@ function App() {
         <Route path="/Cart" element={<Cart/>}></Route>
         <Route path="/Menu" element={<Menu/>}></Route>
       </Routes>
-      <Footer/>
+      <Footer className="Footer"/>
     </Router>
     </ShopContextProvider>
     </div>
