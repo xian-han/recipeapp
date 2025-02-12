@@ -6,37 +6,57 @@
     align-items: center;
     flex-direction: column;
 }
-
-.title{
+.titleContainer{
+    height:60px;
+    width:auto;
     display:flex;
     justify-content: center;
     align-items: center;
     padding:5px;
+    margin-top:5px;
 }
+
+.titleText{
+    font-size:20px;
+    border-left:4px solid black;
+    padding-left:5px;
+}
+
 .MenuList{
-    width: 80vw;
+    width: 90vw;
     height: auto;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr ;
     place-items: center;
-    /* border:1px solid black; */
 }
 
 @media only screen and (max-width: 1300px) {
     .MenuList {
-      grid-template-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
     }
-  }
+    .titleContainer{
+        position:relative;
+        left:-280px;
+    }
+}
   
 @media only screen and (max-width: 800px) {
-   .MenuList {
+    .titleContainer{
+        height:auto;
+        min-width:350px;
+        position:relative;
+        left:0px;
+    }
+    .MenuList {
      grid-template-columns: 1fr;
    }
 }
 @media only screen and (min-width: 2600px){
     .MenuList{
         grid-template-columns: 1fr;
+        margin-bottom: 700px;
     }
+
 }
 .menuItem {
     border-radius: 15px;
@@ -92,14 +112,23 @@
     transition: ease-in 0.3s;
 }
 
+.addBtnContainer{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+}
+
 .cartController .addToCartBtn{ 
     width:auto;
     font-size:18px;
     margin-left: 10px;
+    
 }
 
-.cartController .cartMark{
-    height:inherit;
+.cartMarkContainer{
+    display:inherit;
+    align-items: center;
+    justify-content: center;
 }
 
 .account {
