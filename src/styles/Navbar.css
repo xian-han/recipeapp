@@ -1,5 +1,9 @@
+*{
+  box-sizing: border-box;
+}
+
 .navbar{
-    width:100%;
+    width:auto;
     height:100px;
     display:flex;
     flex-direction:row;
@@ -7,27 +11,28 @@
 }
 
 .navbar a{
+  color:#5d5d5d;
   text-decoration: none;
   margin:20px;
 }
 
-.navbar .leftSide{
+.leftSide{
     flex:50%;
     height:100%;
     display:flex;
     align-items:center;
-    padding-left:150px;
 }
 
-.navbar .leftSide img{
+.leftSide img{
     width:140px;
     height:135px;
+    margin-left:50px;
 }
 
-.navbar .leftSide img:hover{
+.leftSide img:hover{
     opacity:0.8;
 }
-.navbar .rightSide{
+.rightSide{
     flex:50%;
     height:100%;
     display:flex;
@@ -35,115 +40,128 @@
     justify-content:center;
 }
 
-.navbar .rightSide svg{
+.rightSide svg{
     font-size:40px;
 }
 
-
-.navbar .rightSide a{
-    color:green;
-    text-decoration: none;
-}
-
-.navbar .rightSide a:hover{
-    color:p;
+.rightSide a:hover{
     border-bottom: 2px solid black;
     transition: ease-out 0.3s;
     opacity:0.5;
 }
-
-.navbar .rightSide button{
-  background-color:transparent;
-  border:none;
-  color:black;
-  cursor:pointer;
+.cartTotalAccounts{
+  position:relative;
+  height:20px;
+  width:20px;
+  right:55px;
+  top:-15px;
+  border:2px solid rgb(255, 51, 0);
+  background-color: rgb(255,51,0);
+  padding:3px;
+  border-radius:50%;
+  display:flex;
+  align-items: center;
+  justify-content: center;
+}
+.navbar .cartTotalAccounts span{
+  color:white;
 }
 
 
-@media only screen and(max-width:600px){
 
-  /* .hiddenLinks {
+@media only screen and (max-width:650px){
+  .navbar{
+    width:auto;
     height:100px;
+    min-width:350px;
+    display:flex;
+    flex-direction:row;
+    background-color:#F5DEB3;
+  }
+  .leftSide img{
+    display:none;
+  }
+  .hiddenToggle:hover{
+    cursor:pointer;
+    opacity:0.75;
+  }
+  #toggleInput{
+    display:none;
+  }
+  input:checked ~ .hiddenLinks{
+    max-width:450px;
+    min-width:180px;
+    box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.2);
+  }
+  .hiddenLinks{
+    display:flex;
+    align-items: center;
+    list-style:none;
+    max-width:0;
+    overflow:hidden;
+    transition: .5s;
+    border-radius: 5px;
+    padding:5px;
+  }
+  .hiddenLinks li{
+    display:flex;
+    flex-direction: row;
+  }
+  .hiddenLinks a{
+    color:#5d5d5d;
+    text-decoration: none;
+  }
+  .hiddenLinks a:hover{
+    border-bottom: 2px solid black;
+    transition: ease-out 0.3s;
+    opacity:0.5;
+  }
+
+  .hidden_cartTotalAccounts{
+    position:relative;
+    height:20px;
+    width:20px;
+    right:55px;
+    top:-5px;
+    border:2px solid rgb(255, 51, 0);
+    background-color: rgb(255,51,0);
+    border-radius:50%;
     display:flex;
     align-items:center;
     justify-content:center;
-  } */
+  }
+
+  .hidden_cartTotalAccounts span{
+    color:white;
+  }
+
+  .rightSide {
+    display:none;
+  }
   
   .rightSide button{
     display:inherit;
   }
 
-  .hiddenLinks a{
-    color: white;
-    text-decoration: none;
-    margin:5px;
-    padding-bottom: 5px;
+  .rightSide a{
+    color:yellow;
   }
+}
 
-  .navbar #turnOn a{
-    display: inherit;
-    flex-direction: column;
-    margin:5px;
-  }
-  
-  .navbar #turnOff a{
+@media only screen and (min-width:650px) {
+  .hiddenToggle{
     display:none;
   }
-
-}
-
-@media only screen and (min-width:600px) {
-  .navbar .rightSide button{
-      display:none;
+  #toggleInput{
+    display:none;
   }
   .hiddenLinks{
-      display:none;
+    list-style: none;
+  }
+  .hiddenLinks a{
+    display:none;
+  }
+  .hidden_cartTotalAccounts{
+    display:none;
   }
 }
-/* .navbar #open {
-    padding-left: 0px;
-  }
-  .navbar #open img {
-    display: none;
-  }
-  
-  .navbar #close img {
-    display: inherit;
-  }
-  
-  .navbar #open .hiddenLinks {
-    display: inherit;
-    margin-left: 30px;
-    flex-direction: column;
-  }
-  
-  .navbar #close .hiddenLinks {
-    display: none;
-  }
-  
-  .navbar #open a {
-    width: 70px;
-    margin: 5px;
-  } */
-
-/* @media only screen and (max-width: 900px) {
-    .navbar .rightSide a {
-      width: 70px;
-    }
-    .navbar .leftSide {
-      padding-left: 50px;
-    }
-  }
-
-@media only screen and (max-width:600px){
-    .navbar .rightSide a{
-        display:none;
-    }
-    .navbar .rightSide{
-        justify-content:flex-end;
-        padding-right:50px;
-    }
-    .navbar .rightSide button{
-        display:inherit;
-    }
-} */
