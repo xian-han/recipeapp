@@ -1,6 +1,8 @@
  .Home{
     width: 100%;
-    height: 90vh;
+    height: auto;
+    min-width:350px;
+    min-height:850px;
     display: flex;
     justify-content: center;
     align-items: left;
@@ -70,10 +72,15 @@
     /* transition:0.3s ease-in; */
 }
 
-@media only screen and (max-width: 650px){
+@media only screen and (max-width: 600px){
     .Home {
+        width:100%;
+        height:auto;
+        min-width:350px;
+        min-height:850px;
+        display:flex;
         justify-content: center;
-        align-items: center;
+        align-items: center;  
     }
     .headerContainer{
         height:auto;
@@ -87,7 +94,7 @@
         flex-direction: column;
     }
     .headerInfo{
-        height:250px;
+        height:200px;
         padding-top:20px;
     }
     .headerInfo h1 {
@@ -120,5 +127,9 @@
         background-color: rgb(225, 225, 225);
         color: #07090a;
     }
-
+}
+@media only screen and (min-width: 2600px){
+    .Home{
+        height:100vh;
+    }
 }
