@@ -1,6 +1,8 @@
 import React,{useContext,useState,useEffect} from 'react'
 import {ShoppingCart} from 'phosphor-react'
 import {ShopContext} from '../helpers/ShopContext'
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 function MenuItem({id,name,front_image,price}) {
   
@@ -44,11 +46,15 @@ function MenuItem({id,name,front_image,price}) {
         setClickFlag((prev)=>!prev);
       },loadingTime);
     }
-  },[clickFlag]);
+  },[clickFlag])
+
+  useEffect(()=>{
+    AOS.init();
+  },[])
 
   return (
     <div className="menuItem">
-      <div className="flip-Container" style={front_image!=""?{backgroundImage:`url(${front_image})`}:{backgroundImage:`url()`}}></div>
+      <div className="flip-Container" data-aos="flip-left" style={front_image!=""?{backgroundImage:`url(${front_image})`}:{backgroundImage:`url()`}}></div>
       <div className="MenuInfo">
         <p className="name">{name}</p>
         <p className="price">NT${price}</p>
