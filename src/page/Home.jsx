@@ -5,11 +5,16 @@ import '../styles/Home.css'
 function Home() {
   return (
     <div data-aos="fade-up" data-aos-duration="2000"
-    className="Home" style={{backgroundImage:`url(${BannerImage})`}}>
-      <div  data-aos="zoom-in" data-aos-duration="3000" className="headerContainer">
-        <div className="headerInfo">
-          <h1>Battkery</h1>
-          <p>Welcome to Bettkery</p>
+    className="Home" style={{backgroundImage:`url(${BannerImage})`,maxWidth:`100%`}}>
+      <div className="headerContainer" data-aos="zoom-in" data-aos-duration="3000">
+        <div className="headerInfo-container">
+          <div className="headerInfo-title">
+            <h1>Battkery</h1>
+          </div>
+          <div className="headerInfo-text">
+            <p>Welcome to Bettkery</p>
+          </div>
+          
         </div>
         <div className="orderButton-container">
           <Link to="/Menu">
