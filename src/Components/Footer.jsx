@@ -14,15 +14,17 @@ function Footer() {
         </Link>
         <Link to={"https://www.google.com"}>
          <TwitterIcon /> 
-         </Link>
-         <Link to ={"https://www.google.com"}>
+        </Link>
+        <Link to ={"https://www.google.com"}>
          <FacebookIcon /> 
-         </Link>
-         <Link to ={"https://www.google.com"}>
+        </Link>
+        <Link to ={"https://www.google.com"}>
          <LinkedinIcon />
-         </Link>
+        </Link>
       </div>
-      <p>&copy; 2024 XianHan.com</p>
+      <div className="copyright">
+        <p>&copy; 2025 XianHan.com</p>
+      </div>
     </footer>
   )
 }
