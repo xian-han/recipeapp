@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/recipeapp/static/css/main.7196c48e.css",
+    "main.css": "/recipeapp/static/css/main.4a12fe8d.css",
     "main.js": "/recipeapp/static/js/main.40950baf.js",
     "static/media/Basque2.png": "/recipeapp/static/media/Basque2.af38c1cd1560db63d8ae.png",
     "static/media/Kitty.jpg": "/recipeapp/static/media/Kitty.ded47b42962184b8e23f.jpg",
@@ -12,11 +12,11 @@
     "static/media/Basque2.jpg": "/recipeapp/static/media/Basque2.2ec0a67cc029277a87fe.jpg",
     "static/media/Dried_Longan_CupCake.jpg": "/recipeapp/static/media/Dried_Longan_CupCake.523fdd1c0847eca25e08.jpg",
     "index.html": "/recipeapp/index.html",
-    "main.7196c48e.css.map": "/recipeapp/static/css/main.7196c48e.css.map",
+    "main.4a12fe8d.css.map": "/recipeapp/static/css/main.4a12fe8d.css.map",
     "main.40950baf.js.map": "/recipeapp/static/js/main.40950baf.js.map"
   },
   "entrypoints": [
-    "static/css/main.7196c48e.css",
+    "static/css/main.4a12fe8d.css",
     "static/js/main.40950baf.js"
   ]
 }
