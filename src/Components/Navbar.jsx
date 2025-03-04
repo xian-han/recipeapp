@@ -62,11 +62,11 @@ function Navbar() {
               <Link to="/Cart" onClick={(thisTag)=>checkSamepage(thisTag,"/Cart")}>
                 <ShoppingCart size={32}/>
               </Link>
-              <Link to="/Cart" className="hidden_cartTotalAccounts" style={cartTotalAccounts_css} onClick={(thisTag)=>checkSamepage(thisTag,"/Cart")}>
-                <span>
+              <div className="hidden_cartTotalAccounts" style={cartTotalAccounts_css}>
+                <div className="hidden_totalNum">
                 {cartTotalAccounts>0?cartTotalAccounts:""}
-                </span>
-              </Link>
+                </div>
+              </div>
             </li>
           </ul>
         </div>
@@ -81,11 +81,11 @@ function Navbar() {
           <Link to ="/Cart" onClick={(thisTag)=>checkSamepage(thisTag,"/Cart")}>
             <ShoppingCart size={32}/>
           </Link>
-          <Link to ="/Cart" className="cartTotalAccounts" style={cartTotalAccounts_css} onClick={(thisTag)=>checkSamepage(thisTag,"/Cart")}>
+          <div className="cartTotalAccounts" style={cartTotalAccounts_css}>
             <span>
             {cartTotalAccounts>0?cartTotalAccounts:""}
             </span>
-          </Link>
+          </div>
           
           
         </div>
