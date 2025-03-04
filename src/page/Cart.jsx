@@ -60,7 +60,7 @@ function Cart() {
             <div className="totalPrice">
               <div>
                 <h2>
-                  合計 NT${totalPrice}
+                  合計 NT$ {totalPrice}
                 </h2>
               </div>
               <button type="button">
