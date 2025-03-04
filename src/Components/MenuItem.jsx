@@ -15,7 +15,7 @@ function MenuItem({id,name,front_image,price}) {
   const [clickFlag,setClickFlag] = useState(false);
 
   var addToCartContent = <div className="cartMarkContainer">
-    <ShoppingCart className="cartMark" size={25}/>
+    <ShoppingCart className="cartMark"/>
     <span>
       add to cart
     </span>
@@ -60,7 +60,7 @@ function MenuItem({id,name,front_image,price}) {
         <p className="price">NT${price}</p>
       </div>
       <div className="cartController">
-        <button className="decreacingBtn" type="button" onClick={()=>minusTempAccount(id)}>&#45;</button>
+        <button className="numericBtn" type="button" onClick={()=>minusTempAccount(id)}>&#45;</button>
         <input 
           value={isTyping?" ":tempItemAccount} 
           className="account" 
@@ -70,7 +70,7 @@ function MenuItem({id,name,front_image,price}) {
           onChange={handleChange}
           placeholder="Enter Account"
         />
-        <button className="increacingBtn" type="button" onClick ={()=>plusTempAccount(id)}>&#43;</button>
+        <button className="numericBtn" type="button" onClick ={()=>plusTempAccount(id)}>&#43;</button>
         <div className="addBtnContainer">
           <button className="addToCartBtn" type="button" 
           onClick={()=>{
