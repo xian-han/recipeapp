@@ -31,16 +31,18 @@ function CartItem(props) {
                     </h1>
                 </div>
                 <div className="cartItem-info-price">
-                    NT$ {price}
+                    <span>
+                        NT$ {price}
+                    </span>
                 </div>
                 <a className="Trash" onClick={()=>removeItemFromCart(id)}>
-                    <Trash size={16} />
+                    <Trash/>
                 </a>
             </div>
             <div className="cartItem-controller">
-                <button className="decreaceBtn" type="button" onClick={()=>minusCartAccount(id)}>&#45;</button>
+                <button className="numericBtn" type="button" onClick={()=>minusCartAccount(id)}>&#45;</button>
                 <input type="text" value={cartAccount} min="0" onChange={handleChange} />
-                <button className="increaingBtn" type="button" onClick={()=>plusCartAccount(id)}>&#43;</button>
+                <button className="numericBtn" type="button" onClick={()=>plusCartAccount(id)}>&#43;</button>
             </div>
             <div className="cartItem-Account">
                 <h1>
