@@ -4,6 +4,7 @@ import Bagel from '../dessert/Bagel2.jpg';
 import Scone from '../dessert/Scone.jpg';
 import Dried_Longan_CupCake from '../dessert/Dried_Longan_CupCake.jpg';
 import Tiramisu from '../dessert/Tiramisu.jpg';
+import Kitty from '../dessert/Kitty.jpg';
 
 export const MenuList = [
     {
@@ -41,5 +42,11 @@ export const MenuList = [
         name:"Tiramisu",
         front_image: Tiramisu,
         price:220,
-    }
+    },
+    {
+        id:7,
+        name:"Kitty",
+        front_image:Kitty,
+        price:100000,
+    },
 ];
