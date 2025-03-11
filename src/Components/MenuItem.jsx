@@ -8,7 +8,7 @@ function MenuItem({id,name,front_image,price}) {
   
   const [isTyping,setIsTyping] = useState(false);
   
-  const {tempItem,loadingTime,plusTempAccount,minusTempAccount,updateCartAccount} = useContext(ShopContext);
+  const {tempItem,loadingTime,plusTempAccount,minusTempAccount,updateTempAccount,updateCartAccount} = useContext(ShopContext);
 
   const tempItemAccount = tempItem[id];
 
@@ -37,8 +37,9 @@ function MenuItem({id,name,front_image,price}) {
     setIsTyping(false);
   }
 
-  const handleChange = () =>{
-
+  const handleChange = (e,tempItemAccount) =>{
+    const newAccount = Number(e.target.value);
+    updateTempAccount(id,newAccount);
   }
   useEffect(()=>{
     if(clickFlag){
@@ -60,17 +61,23 @@ function MenuItem({id,name,front_image,price}) {
         <p className="price">NT${price}</p>
       </div>
       <div className="cartController">
-        <button className="numericBtn" type="button" onClick={()=>minusTempAccount(id)}>&#45;</button>
-        <input 
-          value={isTyping?" ":tempItemAccount} 
+        <button className="numericBtn" type="button" onClick={()=>minusTempAccount(id,tempItemAccount)}>&#45;</button>
+        <select 
+          value={tempItemAccount} 
           className="account" 
-          type="text" 
+          type="number" 
           onFocus={handleFocus} 
           onBlur={handleBlur} 
-          onChange={handleChange}
+          onChange={(e)=>handleChange(e,tempItemAccount)}
           placeholder="Enter Account"
-        />
-        <button className="numericBtn" type="button" onClick ={()=>plusTempAccount(id)}>&#43;</button>
+        >
+          {
+            [...Array(21)].map((_,i)=>(
+              <option key={i} value={i}>{i}</option>
+            ))
+          }
+        </select>
+        <button className="numericBtn" type="button" onClick ={()=>plusTempAccount(id,tempItemAccount)}>&#43;</button>
         <div className="addBtnContainer">
           <button className="addToCartBtn" type="button" 
           onClick={()=>{
@@ -82,7 +89,6 @@ function MenuItem({id,name,front_image,price}) {
           }
           </button>        
         </div>
-        
       </div>
     </div>
   )
