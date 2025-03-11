@@ -16,6 +16,8 @@ export const ShopContextProvider = (props) =>{
     const [cartItem,setCartItem] = useState(getDefaultCart);
     //統一管理loading時間
     const loadingTime = 1000;
+    //統一管理數量上限 0~20總共21個數字
+    const accountLimits = 21;
     const getCartTotalPrice = ()=>{
         var totalPrice = 0;
         MenuList.map((menuitem)=>{
@@ -31,8 +33,12 @@ export const ShopContextProvider = (props) =>{
     };
 
     //temp
-    const plusTempAccount =(cartId) =>{
-        setTempItem((prev)=>({...prev,[cartId]:prev[cartId]+1}));
+    const plusTempAccount =(cartId,tempItemAccount) =>{
+        if(tempItemAccount<20){
+            setTempItem((prev)=>({...prev,[cartId]:prev[cartId]+1}));
+        }else if(tempItemAccount>=20){
+            setTempItem((prev)=>({...prev,[cartId]:prev[cartId]}));
+        }
     };
 
     const minusCartAccount=(cartId)=>{
@@ -40,9 +46,22 @@ export const ShopContextProvider = (props) =>{
     };
 
     //temp
-    const minusTempAccount =(cartId) =>{
-        setTempItem((prev)=>({...prev,[cartId]:prev[cartId]>0?prev[cartId]-1:0}));
+    const minusTempAccount =(cartId,tempItemAccount) =>{
+        if(tempItemAccount>0){
+            setTempItem((prev)=>({...prev,[cartId]:prev[cartId]>0?prev[cartId]-1:0}));
+        }else if(tempItemAccount==0){
+            setTempItem((prev)=>({...prev,[cartId]:prev[cartId]}));
+        }
     };
+
+    const updateTempAccount=(cartId,tempItemAccount)=>{
+        if(tempItemAccount>0){
+            setTempItem((prev)=>({...prev,[cartId]:tempItemAccount}));
+        }
+        else{
+            alert("Account must be larger than 0.");
+        }
+    }
 
     const updateCartAccount=(cartId,tempItemAccount)=>{
         
@@ -64,10 +83,12 @@ export const ShopContextProvider = (props) =>{
         tempItem,
         cartItem,
         loadingTime,
+        accountLimits,
         plusCartAccount,
         minusCartAccount,
         plusTempAccount,
         minusTempAccount,
+        updateTempAccount,
         updateCartAccount,
         getCartTotalPrice,
         removeItemFromCart,
