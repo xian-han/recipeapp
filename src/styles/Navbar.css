@@ -3,7 +3,7 @@
 }
 .navbar{
     width:auto;
-    height:100px;
+    height:clamp(100px,15vw,200px);
     min-width:100vw;
     display:flex;
     flex-direction:row;
@@ -22,9 +22,9 @@
 }
 
 .leftSide img{
-    width:140px;
-    height:135px;
-    margin-left:50px;
+    width:clamp(140px,24vw,280px);
+    height:clamp(135px,22vw,260px);
+    margin-left:clamp(50px,8vw,150px);
 }
 
 .leftSide img:hover{
@@ -37,9 +37,12 @@
     align-items:center;
     justify-content:center;
 }
-
-.rightSide svg{
-    font-size:40px;
+.rightSide a{
+  font-size:clamp(20px,4.6vw,32px); 
+}
+.rightSide .ShoppingCart{
+    width:clamp(32px,5.4vw,42px);
+    height:clamp(32px,5.4vw,42px);
 }
 
 .rightSide a:hover{
@@ -49,10 +52,11 @@
 }
 .cartTotalAccounts{
   position:relative;
-  height:20px;
-  width:20px;
-  right:55px;
-  top:-15px;
+  height:1.5em;
+  width:1.5em;
+  right:clamp(40px,5vw,45px); /*min40px*/
+  top:-18px;
+  font-size:clamp(20px,2vw,22px);
   border:2px solid rgb(255, 51, 0);
   background-color: rgb(255,51,0);
   padding:3px;

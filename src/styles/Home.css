@@ -7,7 +7,7 @@
     width: 100%;
     height: auto;
     min-width:100vw;
-    min-height: 850px; 
+    min-height: 100vh; 
     display: flex;
     justify-content: center;
     align-items: left;
@@ -37,24 +37,24 @@
 }
 
 .headerInfo-title{
-    width:100vw;
+    width:80vw;
     height:auto;
 }
 
 .headerInfo-title h1{
-    width:clamp(200px,100vw,800px);
+    width:clamp(200px,80vw,800px);
     height:auto;
     font-size: clamp(30px,8vw,200px);
     font-weight: 800;
     color:tan;
 }
 .headerInfo-text{
-    width:100vw;
+    width:80vw;
     height:auto;
     margin-bottom:10px;
 }
 .headerInfo-text p{
-    width:clamp(200px,100vw,800px);
+    width:inherit;
     height:auto;
     font-size:clamp(20px,4vw,175px);
     font-weight:50;
@@ -75,9 +75,9 @@
 }
 
 .orderButton{
-    height:70px;
-    width:180px;
-    font-size: 20px;
+    width:8em;
+    height:auto;
+    font-size: clamp(20px,3vw,36px);
     color:white;
     background-color: #121619;
     border:none;

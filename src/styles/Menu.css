@@ -8,7 +8,7 @@
     flex-direction: column;
 }
 .titleContainer{
-    height:60px;
+    height:clamp(60px,6vw,120px); 
     width:auto;
     display:flex;
     justify-content: center;
@@ -18,13 +18,13 @@
     margin-top:5px;
 }
 .titleText{
-    font-size:20px;
+    font-size:clamp(30px,2vw,60px);
     border-left:4px solid black;
     padding-left:5px;
 }
 
 .MenuList{
-    width: 90vw;
+    width: 95vw;
     height: auto;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr ;
@@ -32,9 +32,9 @@
 }
 .menuItem {
     border-radius: 15px;
-    width: clamp(280px,80vw,540px);
-    height: 350px;
-    margin: 20px;
+    width: clamp(300px,28vw,600px); 
+    height: auto;
+    margin: 10px;
     box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.2);
 }
 
@@ -43,7 +43,6 @@
     transition: ease-in 0.3s;
     cursor:pointer;
 } 
-
 
 .menuItem .flip-Container {
     border-top-left-radius: 15px;
@@ -55,6 +54,26 @@
     background-size: cover;
   }
 
+  .MenuInfo .name{
+    display:flex; 
+    align-items:center;
+    justify-content: center;
+    font-size:clamp(25px,2vw,40px); 
+    padding-bottom:0px;
+    margin-bottom:0px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.MenuInfo .price{
+    display:flex; 
+    align-items:center;
+    justify-content: center;
+    font-size:clamp(20px,2vw,36px); 
+    padding-bottom:0px;
+    margin-bottom:0px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
 .cartController{
     height:60px;
     width:inherit;
@@ -64,15 +83,15 @@
     flex-direction: row;
 }
 
-.cartController button{
+.cartController .numericBtn{
     display:flex;
     align-items:center;
     justify-content:center;
     border-radius: 5px;
-    height:25px;
-    width:25px;
-    font-size: 25px;
-    margin:10px;
+    height:clamp(25px, 3vw, 48px);
+    width:clamp(25px, 3vw, 48px);
+    font-size: clamp(25px, 4vw, 48px);
+    margin:0px 5px;
     background-color: #e18a19;
     color:white;
 }
@@ -84,67 +103,72 @@
     transition: ease-in 0.3s;
 }
 
+.account {
+    width:2.8em;
+    height:2em;
+    font-size:clamp(12px,4vw,24px);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+
 .addBtnContainer{
+    width:clamp(160px,12vw,240px);    
+    height:auto;
     display:flex;
     align-items: center;
     justify-content: center;
 }
 
 .addBtnContainer .addToCartBtn{ 
-    width:auto;
-    font-size:18px;
-    margin-left: 10px;
-    
+    width:inherit; 
+    height:clamp(25px, 3vw, 48px);
+    background-color: #e18a19;
+    color:white;
 }
-
 .cartMarkContainer{
-    display:inherit;
+    width:inherit;
+    height:inherit;
+    padding:0px 5px;
+    display:flex;
     align-items: center;
     justify-content: center;
 }
+.cartMark{
+    width:clamp(24px,4vw,36px);
+    height:auto;
+}
+.cartMarkContainer span{
+    width:clamp(140px,12vw,200px);
+    height:inherit;
+    display:inherit;
+    align-items:center;
+    justify-content: center;
+    font-size:clamp(18px,1.5vw,30px);
+    padding:0px 5px;
+}
 
-.account {
-    height:25px;
-    width:25px;
+.hidden_spinner{
+    height:inherit;
     display:flex;
-    align-items:center;
-    justify-content:center;
-}
-
-.MenuInfo .name{
-    display:flex; 
-    align-items:center;
     justify-content: center;
-    font-size:25px;
-    padding-bottom:0px;
-    margin-bottom:0px;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
-
-.MenuInfo .price{
-    display:flex; 
-    align-items:center;
-    justify-content: center;
-    font-size:20px;
-    padding-bottom:0px;
-    margin-bottom:0px;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    align-items: center;
 }
 
 .spinner{
-    padding-top:5px;
-    padding-left:5px;
-    width:25px;
-    height:25px;
-    position:relation;
+    width:clamp(25px,4vw,40px); 
+    height:inherit;
+    display:flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .spinnerSector{
     position:absolute;
-    width:15px;
-    height:15px;
+    width:clamp(15px,2.5vw,30px);
+    height:clamp(15px,2.5vw,30px);
     border-radius:50%;
-    border:2px solid transparent;
+    border:2.5px solid transparent;
 }
 .spinnerRed {
     border-top-color: lightcoral;
@@ -192,10 +216,9 @@ border-bottom-color: lightgreen;
         height:auto;
         position:relative;
         left:0px;
-        /* padding:10px 0px; */
     }
     .titleText{
-        font-size:clamp(24px,8vw,48px);/*48px;*/
+        font-size:clamp(24px,8vw,48px);
         border-left:4px solid black;
         padding-left:5px;
     }
@@ -205,7 +228,7 @@ border-bottom-color: lightgreen;
     .menuItem{
         border-radius: 15px;
         width: clamp(260px,80vw,540px)!important;
-        height: auto;/*390px*/
+        height: auto;
         margin: 10px!important;
         box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.2);
     }
@@ -229,7 +252,7 @@ border-bottom-color: lightgreen;
     }
     .cartController{
         width:inherit;
-        height:60px;
+        height:clamp(40px,10vw,60px);
         display:flex;
         align-items:center;
         justify-content:center;
@@ -254,12 +277,14 @@ border-bottom-color: lightgreen;
         transition: ease-in 0.3s;
     }
     .account {
-        width:clamp(25px,8vw,48px);
-        height:clamp(25px,8vw,48px);
+        width:2.8em;
+        height:2.5em;
         display:flex;
         align-items:center;
         justify-content:center;
         font-size:clamp(12px,4vw,24px);
+        border:1px solid black;
+        border-radius: 5px;
     }
     .addBtnContainer{
         width:clamp(128px,40vw,240px);
@@ -269,7 +294,7 @@ border-bottom-color: lightgreen;
         justify-content: center;
     }
     .addBtnContainer .addToCartBtn{ 
-        width:clamp(100px,33vw,200px);
+        width:inherit;
         height:clamp(25px, 8vw, 48px);
         margin: 0px 10px 0px 10px;
         display:flex;
@@ -277,7 +302,7 @@ border-bottom-color: lightgreen;
         justify-content: center;
     }
     .cartMarkContainer{
-        width:clamp(100px,30vw,180px);
+        width:inherit;
         height:auto;
         display:inherit;
         align-items: center;
@@ -288,12 +313,13 @@ border-bottom-color: lightgreen;
         height:inherit;
     }
     .cartMarkContainer span{
-        width:clamp(65px,20vw,120px);
+        width:clamp(85px,30vw,140px);
         height:auto;
         display:inherit;
         align-items:center;
         justify-content: center;
         font-size:clamp(12px,4vw,24px);
+        padding:0px 5px;
     }
 }
 
@@ -305,12 +331,89 @@ border-bottom-color: lightgreen;
         width:clamp(600px,80vw,1024px);
         height:auto;
     }
+    .titleText{
+        font-size:clamp(30px,5vw,60px);
+        border-left:4px solid black;
+        padding-left:5px;
+    }
     .menuItem{
         border-radius: 15px;
-        width: clamp(270px,40vw,460px)!important;
-        height: 350px;
+        width: clamp(240px,40vw,460px)!important;
+        height: auto;
         margin: 10px;
         box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.2);
+    }
+    .MenuInfo .name{
+        display:flex; 
+        align-items:center;
+        justify-content: center;
+        font-size:clamp(22px,3.6vw,40px); 
+        padding-bottom:0px;
+        margin-bottom:0px;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    .MenuInfo .price{
+        display:flex; 
+        align-items:center;
+        justify-content: center;
+        font-size:clamp(20px,3vw,30px); 
+        padding-bottom:0px;
+        margin-bottom:0px;
+        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    }
+    .cartController{
+        width:inherit;
+        height:clamp(40px,6vw,50px);
+        display:flex;
+        align-items:center;
+        justify-content:center;
+        flex-direction: row;
+    }
+    .cartController .numericBtn{
+        display:flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 5px;
+        width:clamp(25px,4vw,48px);
+        height:clamp(25px,4vw,48px);
+        font-size:clamp(25px,4vw,48px);
+        margin:0px 5px;
+        background-color:#e18a19;
+        color:white;
+    }
+    .account{
+        width:2.4em;
+        height:2em;
+        display:flex;
+        align-items:center;
+        justify-content:center;
+        font-size:clamp(20px,3vw,24px);
+        border:1px solid black;
+        border-radius: 5px;
+    }
+    .addBtnContainer{
+        width:clamp(120px,20vw,160px);
+        height:auto;
+        display:flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .addBtnContainer .addToCartBtn{ 
+        width:inherit;
+        height:clamp(25px,4vw,48px);
+        margin: 0px 10px 0px 10px;
+        display:flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .cartMarkContainer span{
+        width:clamp(60px,15vw,120px);
+        height:auto;
+        display:inherit;
+        align-items:center;
+        justify-content: center;
+        font-size:clamp(12px,2vw,24px);
+        padding:0px 5px;
     }
 }
 
@@ -319,5 +422,12 @@ border-bottom-color: lightgreen;
         grid-template-columns: 1fr;
         margin-bottom: 700px;
     }
-
+    .account {
+        width: 3.6em;
+        height: 1.8em;
+        font-size: clamp(12px, 4vw, 24px);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
 }
