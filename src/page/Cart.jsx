@@ -41,17 +41,17 @@ function Cart() {
               })
             ):(
               <div className="cartIsEmpty">
-                <span>
-                  <h1>
+                <h1>
                   Your Cart is empty.
-                  </h1>
-                </span>
+                </h1>
                 <br />
-                <Link to="/Menu">
-                <button className="countinueShop" type="button">
-                  Countinue Shopping             
-                </button>
-                </Link>
+                <div className="continueShop-container">
+                  <Link to="/Menu">
+                  <button className="countinueShop" type="button">
+                    Countinue Shopping             
+                  </button>
+                  </Link>
+                </div>
               </div>
             )
           }
