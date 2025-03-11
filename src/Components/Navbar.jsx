@@ -60,7 +60,7 @@ function Navbar() {
             </li>
             <li>
               <Link to="/Cart" onClick={(thisTag)=>checkSamepage(thisTag,"/Cart")}>
-                <ShoppingCart size={32}/>
+                <ShoppingCart className="ShoppingCart" size={32}/>
               </Link>
               <div className="hidden_cartTotalAccounts" style={cartTotalAccounts_css}>
                 <div className="hidden_totalNum">
@@ -79,7 +79,7 @@ function Navbar() {
             Menu
           </Link>
           <Link to ="/Cart" onClick={(thisTag)=>checkSamepage(thisTag,"/Cart")}>
-            <ShoppingCart size={32}/>
+            <ShoppingCart className="ShoppingCart" size={32}/>
           </Link>
           <div className="cartTotalAccounts" style={cartTotalAccounts_css}>
             <span>
